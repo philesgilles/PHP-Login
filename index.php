@@ -26,8 +26,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 values="0.02 0.06;0.04 0.08;0.02 0.06" repeatCount="indefinite" />
         </filter>
     </svg>
-    <div class="container">
-        <div class="alert alert-info" role="alert">
+    <div class="container fixbeach">
+        <div class="alert alert-info shadow" role="alert">
             <h1>Hi,<b><?php echo htmlspecialchars(!empty($_SESSION['firstname'])) ? ($_SESSION["firstname"]) : ($_SESSION["username"]); ?></b>.
                 did you know that :</h1>
             <p id="joke" class="lead">
@@ -37,7 +37,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
         </div>
         <?php if (empty($_SESSION['firstname'])): ?>
-        <div class="alert alert-warning mt-3" role="alert">
+        <div class="alert alert-warning mt-3 shadow" role="alert">
             <p class="text-center">You havent completed your profile. please <a class="btn-link"
                     href="/user_reg/auth/account.php">click here</a> to update your informations
             </p>

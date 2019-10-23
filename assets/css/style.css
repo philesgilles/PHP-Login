@@ -1,5 +1,5 @@
 body {
-  background: rgb(191, 205, 214);
+  background: #8dcfdf;
   color: #454444;
   font-family: 'Open Sans', sans-serif;
   margin-top: 80px;
@@ -56,7 +56,11 @@ h6 {
   filter: url('#turbulence');
 }
 
-.container {
+.fixbeach {
   position: relative;
   top: -120px;
+}
+
+.alert {
+  opacity: 0.9;
 }
