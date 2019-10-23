@@ -119,47 +119,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php include '../components/header.php'?>
 
 <body>
-    <div class="wrapper">
-        <h2>Change User informations</h2>
-        <p>Please use this form to modify your user's informations</p>
-        <a href="auth/reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
-                <label>First Name</label>
-                <input type="text" name="firstname" class="form-control" value="<?php echo $firstname; ?>">
-                <span class="help-block"><?php echo $firstname_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
-                <label>Last Name</label>
-                <input type="text" name="lastname" class="form-control" value="<?php echo $lastname; ?>">
-                <span class="help-block"><?php echo $lastname_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
-                <span class="help-block"><?php echo $email_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($github_err)) ? 'has-error' : ''; ?>">
-                <label>Github</label>
-                <input type="text" name="github" class="form-control" value="<?php echo $github; ?>">
-                <span class="help-block"><?php echo $github_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($linkedin_err)) ? 'has-error' : ''; ?>">
-                <label>LinkedIn</label>
-                <input type="text" name="linkedin" class="form-control" value="<?php echo $linkedin; ?>">
-                <span class="help-block"><?php echo $linkedin_err; ?></span>
-            </div>
-            <div class="form-group <?php echo (!empty($avatar_err)) ? 'has-error' : ''; ?>">
-                <label>Avatar</label>
-                <input type="text" name="avatar" class="form-control" value="<?php echo $avatar; ?>">
-                <span class="help-block"><?php echo $avatar_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link" href="../welcome.php">Cancel</a>
-            </div>
-        </form>
-    </div>
-</body>
+    <?php include '../components/navbar.php'?>
 
-</html>
+    <div class="container">
+         <div class="row mt-4 p-3">
+            <div class="col shadow p-3 mb-5 bg-white rounded">
+                <h2>Change User informations</h2>
+                <p>Please use this form to modify your user's informations</p>
+                <div class="d-flex justify-content-center">
+                    <a href="reset-password.php" class="btn btn-lg btn-outline-danger mb-4">Reset Your Password</a>
+                </div>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <div class="form-group <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
+                        <label>First Name :</label>
+                        <input type="text" name="firstname" class="form-control" value="<?php echo $firstname; ?>">
+                        <span class="help-block"><?php echo $firstname_err; ?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
+                        <label>Last Name :</label>
+                        <input type="text" name="lastname" class="form-control" value="<?php echo $lastname; ?>">
+                        <span class="help-block"><?php echo $lastname_err; ?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+                        <label>Email :</label>
+                        <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
+                        <span class="help-block"><?php echo $email_err; ?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($github_err)) ? 'has-error' : ''; ?>">
+                        <label>Github url: </label>
+                        <input type="text" name="github" class="form-control" value="<?php echo $github; ?>">
+                        <span class="help-block"><?php echo $github_err; ?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($linkedin_err)) ? 'has-error' : ''; ?>">
+                        <label>LinkedIn url: </label>
+                        <input type="text" name="linkedin" class="form-control" value="<?php echo $linkedin; ?>">
+                        <span class="help-block"><?php echo $linkedin_err; ?></span>
+                    </div>
+                    <div class="form-group <?php echo (!empty($avatar_err)) ? 'has-error' : ''; ?>">
+                        <label>Avatar :</label>
+                        <input type="text" name="avatar" class="form-control" value="<?php echo $avatar; ?>">
+                        <span class="help-block"><?php echo $avatar_err; ?></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                        <a class="btn btn-link" href="../index.php">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <?php include '../components/footer.php'?>
