@@ -3,6 +3,8 @@
 session_start();
 $page_title = "Update User";
 
+$modified = false;
+
 // Check if the user is logged in, if not then redirect to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
@@ -102,6 +104,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 // Password updated successfully. Destroy the session, and redirect to login page
                 // Close statement
+                $modified              = true;
+                $_SESSION['firstname'] = $_POST['firstname'];
                 mysqli_stmt_close($stmt);
 
             } else {
@@ -122,10 +126,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include '../components/navbar.php'?>
 
     <div class="container">
-         <div class="row mt-4 p-3">
+        <div class="row mt-4 p-3">
             <div class="col shadow p-3 mb-5 bg-white rounded">
                 <h2>Change User informations</h2>
                 <p>Please use this form to modify your user's informations</p>
+                <?php if ($modified): ?>
+                <p>Your informations have been modified. <a class="btn-link" href="../index.php">Return to home page</a>
+                </p>
+                <?php else: ?>
                 <div class="d-flex justify-content-center">
                     <a href="reset-password.php" class="btn btn-lg btn-outline-danger mb-4">Reset Your Password</a>
                 </div>
@@ -165,6 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a class="btn btn-link" href="../index.php">Cancel</a>
                     </div>
                 </form>
+                <?php endif;?>
             </div>
         </div>
     </div>
