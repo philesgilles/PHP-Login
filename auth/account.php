@@ -135,7 +135,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </p>
                 <?php else: ?>
                 <div class="d-flex justify-content-center">
-                    <a href="reset-password.php" class="btn btn-lg btn-outline-danger mb-4">Reset Your Password</a>
+                    <a href="reset-password.php" class="btn btn-lg btn-outline-warning mb-4">Reset Your Password</a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="delete_account.php" class="btn btn-sm btn-outline-danger mb-4">Delete your account</a>
                 </div>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="form-group <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
