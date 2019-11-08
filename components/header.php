@@ -14,3 +14,4 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/user_reg/assets/css/style.css">
 </head>
+<body>

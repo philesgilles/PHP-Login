@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container">
         <div class="row mt-4 p-3">
-            <div class="col shadow p-3 mb-5 bg-white rounded">
+            <div class="col shadow-lg p-3 mb-5 bg-white rounded">
                 <h2>Login</h2>
                 <p>Please fill in your credentials to login.</p>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
